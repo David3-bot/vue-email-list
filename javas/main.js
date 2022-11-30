@@ -13,16 +13,21 @@ const app = createApp({
             .then((resp) => {
              
                 this.users.push(resp.data.response)
-                console.log(resp.data);
+                console.log(resp.data.response);
             })
 
     },
 
  
-
+    pushNuoveEmails () {
+        for (let i = 0; i < 10; i++) {
+            this.pushNuovaEmail();
+        }
+    },
+    
 },
 mounted () {
-    this.pushNuovaEmail();
+    this.pushNuoveEmails();
 }
 
 }).mount('#app');
